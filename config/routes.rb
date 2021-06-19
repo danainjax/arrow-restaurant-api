@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
-  
-  namespace :api do
-    namespace :v1 do
-  
-      resources :menus
-      resources :orders
-      resources :customers
-    end
-  end
+  resources :orders
+  resources :items
+  resources :menus
+  resources :customers
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

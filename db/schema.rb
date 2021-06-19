@@ -15,30 +15,6 @@ ActiveRecord::Schema.define(version: 2021_06_04_170316) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password"
-    t.string "phone"
-    t.string "fop"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "menus", force: :cascade do |t|
-    t.string "item_name"
-    t.string "price"
-    t.string "quantity"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.datetime "date"
-    t.datetime "time"
-    t.string "total"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+  
 
 end
