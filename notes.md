@@ -2,12 +2,10 @@ Build Notes-
 Saturday and Sunday--
 
 1. Test models and associations to get to a working back end
--[x]Customer works
--[X]Order is correctly associated with customer 
-Next build some toppings
-Add them to a pizza using the join model pizza_toppings
-Add the pizza you made to a customer's order 
+Streamlined to 3 models
+Customer - test to see if can create seed data
+Pizza - test to see if can create seed data
+Order - test to see if can create an order associated to a customer 
 
 Work out logic to calculate total for order
 
-2. Build seed data for models 
