@@ -15,22 +15,15 @@ ActiveRecord::Schema.define(version: 2021_06_22_134620) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.string "phone"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "orders", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
     t.float "sub_total"
     t.float "tax"
     t.float "total"
-    t.bigint "customer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
   create_table "pizza_orders", force: :cascade do |t|
