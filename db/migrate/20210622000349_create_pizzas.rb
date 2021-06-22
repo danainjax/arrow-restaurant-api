@@ -1,8 +1,13 @@
 class CreatePizzas < ActiveRecord::Migration[6.1]
   def change
     create_table :pizzas do |t|
-      t.string :quantity
+      t.string :name
+      t.string :description
+      t.string :image_url
       t.string :price
+      t.string :quantity
+      t.string :special_instructions
+      t.belongs_to :customer
       t.belongs_to :order
 
       t.timestamps
