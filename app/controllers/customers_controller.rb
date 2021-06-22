@@ -10,7 +10,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/1
   def show
-    customer = Customer.find_by(id: params[:id])
+    # customer = Customer.find_by(id: params[:id])
     render json: customer
   end
 
