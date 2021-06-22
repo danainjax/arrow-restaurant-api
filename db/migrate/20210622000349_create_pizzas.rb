@@ -4,11 +4,10 @@ class CreatePizzas < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :description
       t.string :image_url
-      t.string :price
-      t.string :quantity
+      t.float :price
+      t.integer :quantity
       t.string :special_instructions
-      t.belongs_to :customer
-      t.belongs_to :order
+      
 
       t.timestamps
     end

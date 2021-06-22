@@ -46,6 +46,6 @@ class PizzasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pizza_params
-      params.require(:pizza).permit(:name, :description, :image_url, :price, :quantity, :special_instructions, :customer_id, :order_id)
+      params.require(:pizza).permit(:name, :description, :image_url, :price, :quantity, :special_instructions)
     end
 end

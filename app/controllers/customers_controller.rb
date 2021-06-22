@@ -18,7 +18,7 @@ class CustomersController < ApplicationController
   def create
     customer = Customer.new(customer_params)
 
-    if customer.save
+    if customer.valid?
       render json: customer, status: :created, location: @customer
     else
       render json: customer.errors, status: :unprocessable_entity
