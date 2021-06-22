@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :pizza_orders
   resources :pizzas
   resources :orders
   resources :customers
