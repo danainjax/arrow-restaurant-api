@@ -1,9 +1,12 @@
 BUILD NOTES
 
 For solving:
--[ ] Add validation so dupe customers cannot be saved to db
--[X] Why are before_actions not being set?, cannot use before_action when callback does a render, we are rendering json so my thought is have to write the set object id code in the method, asked in slack to confirm
--[ ] Why does postgres not allow find_by?
+-[ ] What validations are needed on models?
+Pizza-
+
+Order-
+
+
 
 1. Test models and associations to get to a working back end
 Streamlined to 3 models, Pizza, Order, and Pizza_Order as a join table that will allow me to add multiple pizzas to an order.
@@ -17,6 +20,7 @@ MVP BACKEND
 
 -[ ] Work out logic to calculate sub total, tax, and total for an order. (Build a method)
 -[ ] Build an order with multiple pizzas
+-[ ] Figure out how to add a quantity of 2 of a particular pizza to an order
 -[ ] Build pizzas and seed database with 10 pizzas to start with which will serve as the menu
 
 

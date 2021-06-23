@@ -1,5 +1,5 @@
 class PizzasController < ApplicationController
-  # before_action :set_pizza, only: [:show, :update, :destroy]
+  before_action :set_pizza, only: [:show, :update, :destroy]
 
   # GET /pizzas
   def index
@@ -10,42 +10,42 @@ class PizzasController < ApplicationController
 
   # GET /pizzas/1
   def show
-    pizza = Pizza.find_by_id(params[:id])
-    render json: pizza
+    
+    render json: @pizza
   end
 
   # POST /pizzas
   def create
-    pizza = Pizza.new(pizza_params)
+    @pizza = Pizza.new(pizza_params)
 
-    if pizza.save
-      render json: pizza, status: :created, location: pizza
+    if @pizza.save
+      render json: @pizza, status: :created, location: @pizza
     else
-      render json: pizza.errors, status: :unprocessable_entity
+      render json: @pizza.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /pizzas/1
   def update
-    pizza = Pizza.find_by_id(params[:id])
-    if pizza.update(pizza_params)
+    
+    if @pizza.update(pizza_params)
       render json: @pizza
     else
-      render json: pizza.errors, status: :unprocessable_entity
+      render json: @pizza.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /pizzas/1
   def destroy
-    pizza = Pizza.find_by_id(params[:id])
-    pizza.destroy
+    
+    @pizza.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    # def set_pizza
-    #   pizza = Pizza.find(params[:id])
-    # end
+    def set_pizza
+      @pizza = Pizza.find_by_id(params[:id])
+    end
 
     # Only allow a list of trusted parameters through.
     def pizza_params
