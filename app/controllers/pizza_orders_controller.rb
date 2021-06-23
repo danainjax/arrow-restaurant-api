@@ -23,6 +23,7 @@ class PizzaOrdersController < ApplicationController
     end
 
     def destroy
+        pizza_order = PizzaOrder.find(params[:id])
         pizza_order.destroy
     end
 

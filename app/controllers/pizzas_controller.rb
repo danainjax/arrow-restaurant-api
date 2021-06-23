@@ -1,5 +1,5 @@
 class PizzasController < ApplicationController
-  before_action :set_pizza, only: [:show, :update, :destroy]
+  # before_action :set_pizza, only: [:show, :update, :destroy]
 
   # GET /pizzas
   def index
@@ -27,6 +27,7 @@ class PizzasController < ApplicationController
 
   # PATCH/PUT /pizzas/1
   def update
+    pizza = Pizza.find(params[:id])
     if pizza.update(pizza_params)
       render json: @pizza
     else
@@ -36,14 +37,15 @@ class PizzasController < ApplicationController
 
   # DELETE /pizzas/1
   def destroy
+    pizza = Pizza.find(params[:id])
     pizza.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_pizza
-      pizza = Pizza.find(params[:id])
-    end
+    # def set_pizza
+    #   pizza = Pizza.find(params[:id])
+    # end
 
     # Only allow a list of trusted parameters through.
     def pizza_params

@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :update, :destroy]
+  # before_action :set_order, only: [:show, :update, :destroy]
 
   # GET /orders
   def index
@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
 
   # PATCH/PUT /orders/1
   def update
+    order = Order.find(params[:id])
     if order.update(order_params)
       render json: order
     else
@@ -36,14 +37,15 @@ class OrdersController < ApplicationController
 
   # DELETE /orders/1
   def destroy
+    order = Order.find(params[:id])
     order.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      order = Order.find(params[:id])
-    end
+    # def set_order
+    #   order = Order.find(params[:id])
+    # end
 
     # Only allow a list of trusted parameters through.
     def order_params
