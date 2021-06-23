@@ -13,7 +13,7 @@ class PizzaOrdersController < ApplicationController
     end
 
     def show
-        pizza_order = PizzaOrder.find(params[:id])
+        pizza_order = PizzaOrder.find_by_id(params[:id])
       render json: pizza_order
     end
 
@@ -23,7 +23,7 @@ class PizzaOrdersController < ApplicationController
     end
 
     def destroy
-        pizza_order = PizzaOrder.find(params[:id])
+        pizza_order = PizzaOrder.find_by_id(params[:id])
         pizza_order.destroy
     end
 

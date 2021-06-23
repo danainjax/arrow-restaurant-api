@@ -10,7 +10,7 @@ class PizzasController < ApplicationController
 
   # GET /pizzas/1
   def show
-    pizza = Pizza.find(params[:id])
+    pizza = Pizza.find_by_id(params[:id])
     render json: pizza
   end
 
@@ -27,7 +27,7 @@ class PizzasController < ApplicationController
 
   # PATCH/PUT /pizzas/1
   def update
-    pizza = Pizza.find(params[:id])
+    pizza = Pizza.find_by_id(params[:id])
     if pizza.update(pizza_params)
       render json: @pizza
     else
@@ -37,7 +37,7 @@ class PizzasController < ApplicationController
 
   # DELETE /pizzas/1
   def destroy
-    pizza = Pizza.find(params[:id])
+    pizza = Pizza.find_by_id(params[:id])
     pizza.destroy
   end
 

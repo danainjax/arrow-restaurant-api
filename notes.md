@@ -2,8 +2,8 @@ BUILD NOTES
 
 For solving:
 -[ ] Add validation so dupe customers cannot be saved to db
--[ ] Why are before_actions not being set?
--[ ]  Why does postgres not allow find_by?
+-[X] Why are before_actions not being set?, cannot use before_action when callback does a render, we are rendering json so my thought is have to write the set object id code in the method, asked in slack to confirm
+-[ ] Why does postgres not allow find_by?
 
 1. Test models and associations to get to a working back end
 Streamlined to 3 models, Pizza, Order, and Pizza_Order as a join table that will allow me to add multiple pizzas to an order.

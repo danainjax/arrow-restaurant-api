@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1
   def show
-    order = Order.find(params[:id])
+    order = Order.find_by_id(params[:id])
     render json: order
   end
 
@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
 
   # PATCH/PUT /orders/1
   def update
-    order = Order.find(params[:id])
+    order = Order.find_by_id(params[:id])
     if order.update(order_params)
       render json: order
     else
@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
 
   # DELETE /orders/1
   def destroy
-    order = Order.find(params[:id])
+    order = Order.find_by_id(params[:id])
     order.destroy
   end
 
