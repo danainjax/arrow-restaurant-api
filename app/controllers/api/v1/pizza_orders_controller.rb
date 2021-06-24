@@ -1,4 +1,4 @@
-class PizzaOrdersController < ApplicationController
+class Api::V1::PizzaOrdersController < ApplicationController
     before_action :set_pizza_order, only: [:show, :update, :destroy]
     
 

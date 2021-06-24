@@ -1,4 +1,4 @@
-class PizzasController < ApplicationController
+class Api::V1::PizzasController < ApplicationController
   before_action :set_pizza, only: [:show, :update, :destroy]
 
   # GET /pizzas
