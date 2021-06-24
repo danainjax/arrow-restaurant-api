@@ -21,7 +21,7 @@ MVP BACKEND
 -[ ] Work out logic to calculate sub total, tax, and total for an order. (Build a method)
 -[ ] Build an order with multiple pizzas
 -[ ] Figure out how to add a quantity of 2 of a particular pizza to an order
--[ ] Build pizzas and seed database with 10 pizzas to start with which will serve as the menu
+-[X] Build pizzas and seed database with 10 pizzas to start with which will serve as the menu
 
 
 
