@@ -17,7 +17,7 @@ class Api::V1::OrdersController < ApplicationController
   # POST /orders
   def create
     
-
+    @order = Order.new(order_params)
     if @order.save
       render json: @order, status: :created, location: @order
     else
@@ -49,6 +49,6 @@ class Api::V1::OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:name, :email, :phone, :sub_total, :tax, :total, :customer_id)
+      params.require(:order).permit(:name, :email, :phone, :sub_total, :tax, :total)
     end
 end
