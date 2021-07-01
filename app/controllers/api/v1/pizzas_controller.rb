@@ -4,14 +4,14 @@ class Api::V1::PizzasController < ApplicationController
   # GET /pizzas
   def index
     pizzas = Pizza.all
-
     render json: pizzas
+    # render json: PizzaSerializer.new(pizzas)
   end
 
   # GET /pizzas/1
   def show
-    
     render json: @pizza
+    # render json: PizzaSerializer.new(@pizza)
   end
 
   # POST /pizzas
