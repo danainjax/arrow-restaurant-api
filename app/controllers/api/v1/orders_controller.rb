@@ -4,14 +4,14 @@ class Api::V1::OrdersController < ApplicationController
   # GET /orders
   def index
     orders = Order.all
-    render json: orders
-    # render json: OrderSerializer.new(orders)
+    # render json: orders
+    render json: OrderSerializer.new(orders)
   end
 
   # GET /orders/1
   def show
-      render json: @order
-    # render json: OrderSerializer.new(@order)
+      # render json: @order
+    render json: OrderSerializer.new(@order)
   end
 
   # POST /orders
@@ -19,9 +19,9 @@ class Api::V1::OrdersController < ApplicationController
     
     @order = Order.new(order_params)
     if @order.save
-      render json: @order, status: :created, location: @order
+      render json: OrderSerializer.new(@order), status: :created, location: @order
     else
-      render json: @order.errors, status: :unprocessable_entity
+      render json: Order.serializer.new(@order.errors), status: :unprocessable_entity
     end
   end
 
