@@ -26,7 +26,7 @@ class Api::V1::OrdersController < ApplicationController
       tax: params[:tax],
       total: params[:total],
       pizza_ids: params[:pizza_ids],
-      comments: params[:comments]
+      comments: params[:comments],
       
     )
     render json: OrderSerializer.new(@order)
