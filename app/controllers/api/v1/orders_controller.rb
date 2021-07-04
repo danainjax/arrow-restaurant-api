@@ -17,12 +17,24 @@ class Api::V1::OrdersController < ApplicationController
   # POST /orders
   def create
     
-    @order = Order.new(order_params)
-    if @order.save
-      render json: OrderSerializer.new(@order), status: :created, location: @order
-    else
-      render json: Order.serializer.new(@order.errors), status: :unprocessable_entity
-    end
+    # @order = Order.create(order_params)
+    @order = Order.create(
+      name: params[:name],
+      email: params[:email],
+      phone: params[:phone],
+      sub_total: params[:sub_total],
+      tax: params[:tax],
+      total: params[:total],
+      pizza_ids: params[:pizza_ids],
+      comments: params[:comments]
+      
+    )
+    render json: OrderSerializer.new(@order)
+    # if @order.save
+    #   render json: OrderSerializer.new(@order), status: :created, location: @order
+    # else
+    #   render json: OrderSerializer.new(@order.errors), status: :unprocessable_entity
+    # end
   end
 
   # PATCH/PUT /orders/1
@@ -42,6 +54,8 @@ class Api::V1::OrdersController < ApplicationController
   end
 
   private
+
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find_by_id(params[:id])
@@ -49,6 +63,6 @@ class Api::V1::OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:name, :email, :phone, :sub_total, :tax, :total)
+      params.require(:order).permit(:name, :email, :phone, :sub_total, :tax, :total, :comments, :pizza_ids)
     end
 end
